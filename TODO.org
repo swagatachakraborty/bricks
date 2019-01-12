@@ -1,0 +1,4 @@
+* DONE make Model for padel
+* TODO write a makeMove function in padel class.
+* TODO add event-listner in padel.
+* TODO add tabIndex to the screen.

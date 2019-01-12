@@ -1,0 +1,14 @@
+{
+  "name": "brick",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "open ./test/test.html"
+	},
+	"run": "open ./index.html",
+  "license": "ISC"
+}
