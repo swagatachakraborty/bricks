@@ -1,4 +1,9 @@
-* DONE make Model for padel
-* TODO write a makeMove function in padel class.
-* TODO add event-listner in padel.
-* TODO add tabIndex to the screen.
+* DONE make Model for paddle
+* DONE write a makeMove function in padel class.
+* DONE add event-listner in paddle.
+* DONE add tabIndex to the screen.
+* TODO extract focusScreen function.
+* TODO make ball which is moving.
+** TODO then make it move only inside screen.
+** TODO make it bounce on the bounderies.
+** TODO make it hide when it cross the surface of paddle.
