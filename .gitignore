@@ -2,3 +2,5 @@
 *.swo
 *.swm
 *.swn
+testFrameWork
+node_modules

@@ -8,7 +8,11 @@
   },
   "scripts": {
     "test": "open ./test/test.html"
-	},
-	"run": "open ./index.html",
-  "license": "ISC"
+  },
+  "run": "open ./index.html",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
 }

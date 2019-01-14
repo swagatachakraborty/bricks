@@ -40,33 +40,3 @@ class Paddle {
 		this.left += 10;
 	}
 };
-
-class Ball {
-	constructor (radious = 5, bottom, left, id, color = 'red') {
-		this.radious = radious;
-		this.left = left;
-		this.bottom = bottom;
-		this.color = color;
-		this.id = id;
-	}
-
-	getRadious () {
-		return this.radious;
-	}
-
-	getLeft () {
-		return this.left;
-	}
-
-	getBottom () {
-		return this.bottom;
-	}
-
-	getColor () {
-		return this.color;
-	}
-
-	getId () {
-		return this.id;
-	}
-}
