@@ -24,7 +24,28 @@ class Ball {
 	}
 
 	getVelocity () {
-		return this.velocity;
+		return Object.assign({}, this.velocity);
+	}
+
+	getBounds () {
+		return {
+			topLeft: {
+				x: this.position.x,
+				y: this.position.y
+			},
+			bottomRight: {
+				x: (this.position.x + this.radious),
+				y: (this.position.y + this.radious)
+			}
+		};
+	}
+
+	setVelocity (newVelocity) {
+		this.velocity = newVelocity;
+	}
+
+	setColor (color) {
+		this.color = color;
 	}
 
 	setPosition ({x, y}) {

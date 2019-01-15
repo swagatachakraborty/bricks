@@ -1,12 +1,10 @@
-const getPaddle_1 = (document) => document.getElementById('paddle_1');
+const getPaddle = (document) => document.getElementById('paddle');
 
 const initializePaddle = function (paddleDiv, paddle) {
 	paddleDiv.className = 'paddle';
 	paddleDiv.id = paddle.getId();
-	paddleDiv.style.height = toPixel( paddle.getHeight() );
-	paddleDiv.style.width = toPixel( paddle.getWidth() );
-	paddleDiv.style.bottom = toPixel( paddle.getBottom() );
-	paddleDiv.style.left = toPixel( paddle.getLeft() );
+	setDivDimentions(paddleDiv, paddle.getHeight(), paddle.getWidth());
+	setDivPosition(paddleDiv, paddle.getPosition())
 	paddleDiv.style.backgroundColor = paddle.getColor();
 	return paddleDiv;
 };
@@ -20,5 +18,5 @@ const drawPaddle = function (document, container, paddle) {
 const movePaddle = function (document, paddle) {
 	if(event.key == ARROWRIGHT) paddle.moveRight();
 	if(event.key == ARROWLEFT) paddle.moveLeft();
-	getPaddle_1(document).style.left = toPixel( paddle.getLeft() );
+	setDivPosition( getPaddle(document), paddle.getPosition() )
 }

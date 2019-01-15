@@ -1,9 +1,8 @@
 class Paddle {
-	constructor(height = 10, width = 100, bottom = 2, left = 100, id, color = 'black') {
+	constructor(height = 10, width = 100, {x, y}, id, color = 'black') {
 		this.height = height;
 		this.width = width;
-		this.bottom = bottom;
-		this.left = left;
+		this.position = {x: x, y: y};
 		this.color = color;
 		this.id = id;
 	}
@@ -16,12 +15,21 @@ class Paddle {
 		return this.width;
 	}
 
-	getBottom () {
-		return this.bottom;
+	getPosition () {
+		return this.position;
 	}
 
-	getLeft () {
-		return this.left;
+	getBounds () {
+		return {
+			topLeft: {
+				x: this.position.x,
+				y: this.position.y
+			},
+			bottomRight: {
+				x: (this.position.x + this.width),
+				y: (this.position.y + this.height)
+			}
+		};
 	}
 
 	getColor () {
@@ -33,10 +41,10 @@ class Paddle {
 	}
 
 	moveLeft () {
-		this.left -= 10;
+		this.position.x -= 10;
 	}
 
 	moveRight () {
-		this.left += 10;
+		this.position.x += 10;
 	}
 };

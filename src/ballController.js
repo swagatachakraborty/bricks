@@ -1,17 +1,11 @@
-const getBall_1 = (document) => document.getElementById('ball_1');
-
-const setDivPosition = function (div, x, y) {
-	div.style.left = toPixel( x );
-	div.style.top = toPixel( y );
-};
+const getBall = (document) => document.getElementById('ball');
 
 const initializeBall = function (ballDiv, ball) {
 	ballDiv.className = 'ball';
 	ballDiv.id = ball.getId();
-	ballDiv.style.height = toPixel(ball.getRadious() * 2);
-	ballDiv.style.width = toPixel(ball.getRadious() * 2);
-	ballDiv.style.left = toPixel( ball.getPosition().x );
-	ballDiv.style.top = toPixel( ball.getPosition().y );
+	let length = ball.getRadious() * 2;
+	setDivDimentions(ballDiv, length, length);
+	setDivPosition(ballDiv, ball.getPosition());
 	ballDiv.style.backgroundColor = ball.getColor();
 	return ballDiv;
 };
@@ -20,12 +14,23 @@ const drawBall = function (document, container, ball) {
 	let div = createDiv(document);
 	let ballDiv = initializeBall(div, ball);
 	container.appendChild(ballDiv);
+};	
+
+const moveBall = function (document, ball, leftWall, rightWall, bottomWall, topWall) {
+	let ballView = getBall(document);
+	setInterval(function() {
+		handleCollition(leftWall, ball);
+		handleCollition(bottomWall, ball);
+		handleCollition(rightWall, ball);
+		handleCollition(topWall, ball);
+		ball.move();
+		setDivPosition(ballView, ball.getPosition());
+	}, 5);
 };
 
-const moveBall = function (document, ball) {
-	let ballView = getBall_1(document);
-	setInterval(function() {
-		ball.move();
-		setDivPosition(ballView, ball.getPosition().x, ball.getPosition().y );
-	}, 10);
-};	
+const handleCollition = function (wall, ball) {
+	if(wall.isCollideWith(ball)){
+		let newVelocity = wall.reflectVelocity(ball);
+		ball.setVelocity(newVelocity);
+	}
+};

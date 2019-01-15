@@ -4,19 +4,24 @@
 * DONE add tabIndex to the screen.
 * TODO extract focusScreen function.
 * DONE make ball which is moving.
-** TODO then make it move only inside screen.
-** TODO make it bounce on the bounderies.
+** DONE then make it move only inside screen.
+** DONE make it bounce on the bounderies.
 ** TODO make it hide when it cross the surface of paddle.
 
-* TODO change paddle properties left and bottom, to position object that contain x and y
-* TODO change the setDivPosition signature. it should take position object instead of x and y.
+* DONE change paddle properties left and bottom, to position object that contain x and y
+* DONE change the setDivPosition signature. it should take position object instead of x and y.
 
-* TODO use setDivPosition to 
+* DONE use setDivPosition to 
+** DONE initialize 
+*** DONE paddle 
+*** DONE ball
+** DONE in movePaddle
 
-** TODO initialize 
-*** TODO paddle 
-*** TODO ball
+* DONE It might be helpfull to have another function setHeighWidth or setDimention for hightWidthSetting.
 
-** TODO in movePaddle
-
-* TODO It might be helpfull to have another function setHeighWidth or setDimention for hightWidthSetting.
+* TODO cleare initialize function
+* TODO rename moveBall
+* TODO extract the call back function of set interval
+* TODO make a Game object
+* TODO let Game handle the movement and collition
+* TODO make the initialize function's let to const

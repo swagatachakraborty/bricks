@@ -12,5 +12,10 @@ describe('Ball', function() {
 	it('move: should move the ball towords the direction  of its velocity with speed', function() {
 		ball.move();
 		chai.assert.deepEqual(ball.getPosition(), {x: 602, y: 12});
+	});
+	
+	it('getBounds: should return the top-left and bottom-right positions of the ball', function() {
+		let expectOutput = {topLeft: {x: 600, y: 10}, bottomRight: {x: 615, y: 25}};
+		chai.assert.deepEqual(ball.getBounds(), expectOutput);
   });
 });
